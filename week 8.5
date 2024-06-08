@@ -1,0 +1,18 @@
+n=int(input())
+l=[]
+for i in range(0, n):
+    ele = input()
+    l.append(ele) 
+count={}
+for i in l:
+    if i in count:
+        count[i] += 1
+    else:
+        count[i] = 1
+max_votes = max(count.values())
+winners=[]
+for i,l in count.items():
+    if l==max_votes:
+        winners.append(i)
+winner = min(winners)
+print(winner)
