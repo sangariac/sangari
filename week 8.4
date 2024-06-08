@@ -1,0 +1,14 @@
+s1=input()
+s2=input()
+s1_w=s1.split()
+s2_w=s2.split()
+count = {}
+uncommon = []
+for word in s1_w:
+        count[word]=count.get(word, 0) + 1
+for word in s2_w:
+        count[word]=count.get(word, 0) + 1
+for word, c in count.items():
+        if c==1 and (word in s1_w or word in s2_w):
+            uncommon.append(word)
+print(' '.join(uncommon))
