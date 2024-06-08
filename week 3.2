@@ -1,0 +1,18 @@
+unit=float(input())
+if(unit<=199):
+  a=unit*1.20
+elif(unit>=200 and unit<400):
+  a=unit*1.50
+elif(unit>=400 and unit<600):
+  a=unit*1.80
+elif(unit>=600):
+  a=unit*2.00
+if(a>400):
+  fine=(15/100)*a
+  total=fine+a
+  print("{:.2f}".format(total))
+elif(a<100): 
+  total=100
+  print("{:.2f}".format(total))
+else:
+  print("{:.2f}".format(a))
