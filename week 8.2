@@ -1,0 +1,52 @@
+n = int(input())
+max_t = max_a = min_l = -1
+min_aver = float('inf')
+max_aver = -1
+max_t_stu = []
+max_a_stu = []
+min_l_stu = []
+min_aver_stu = []
+max_aver_stu = []
+students = []
+for _ in range(n):
+    name, test, assignment, lab = input().split()
+    test, assignment, lab = int(test), int(assignment), int(lab)
+    students.append((name, test, assignment, lab))
+students.sort()
+for name, test, assignment, lab in students:
+    average = (test + assignment + lab) / 3
+    
+    if average > max_aver:
+        max_aver = average
+        max_aver_stu = [name]
+    elif average == max_aver:
+        max_aver_stu.append(name)
+    
+    if average < min_aver:
+        min_aver = average
+        min_aver_stu = [name]
+    elif average == min_aver:
+        min_aver_stu.append(name)
+    
+    if test > max_t:
+        max_t = test
+        max_t_stu = [name]
+    elif test == max_t:
+        max_t_stu.append(name)
+    
+    if assignment > max_a:
+        max_a = assignment
+        max_a_stu = [name]
+        elif assignment == max_a:
+        max_a_stu.append(name)
+    
+    if lab < min_l or min_l == -1:
+        min_l = lab
+        min_l_stu = [name]
+    elif lab == min_l:
+        min_l_stu.append(name)
+
+print(' '.join(max_aver_stu))
+print(' '.join(max_a_stu))
+print(' '.join(min_l_stu))
+print(' '.join(min_aver_stu))
