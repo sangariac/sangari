@@ -1,0 +1,16 @@
+a = int(input())
+
+if a < 10 and a >= 0:
+    print("-1")
+elif a < 0:
+    b = -1 * a
+    b = b % 100
+    c = b / 10
+    d = int(c)
+    print(d)
+else:
+    b = a % 100
+    c = b / 10
+    d = int(c)
+    print(d)
+    
