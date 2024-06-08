@@ -1,0 +1,7 @@
+n=int(input())
+if(n<0):
+ a=-n
+ print(a%10)
+else:
+ print(n%10)    
+    
